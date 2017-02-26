@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="expertPanel"  prefHeight="500.0" prefWidth="500.0"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ExpertController">
-    <JFXButton fx:id="yes" layoutX="40.0" layoutY="33.0" mnemonicParsing="false" onAction="#calculate"
-               text="Yes"/>
-    <JFXButton fx:id="no" layoutX="102.0" layoutY="33.0" mnemonicParsing="false" onAction="#calculate"
-               styleClass="button-raised" text="No"/>
-    <Label fx:id="question" layoutX="91.0" layoutY="3.0" text="?"/>
-    <JFXButton fx:id="new" layoutX="40.0" layoutY="66.0" mnemonicParsing="false" onAction="#clear" text="Заново"/>
-    <JFXButton fx:id="input" layoutX="102.0" layoutY="66.0" mnemonicParsing="false" onAction="#nextPane"
-               text="Режим обучения"/>
+<AnchorPane fx:id="expertPanel" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ExpertController">
+    <JFXButton fx:id="yes" layoutX="0.0" layoutY="75.0" mnemonicParsing="false" onAction="#calculate" prefHeight="125.0" prefWidth="250.0" text="Yes" />
+    <JFXButton fx:id="no" layoutX="250.0" layoutY="75.0" mnemonicParsing="false" onAction="#calculate" prefHeight="125.0" prefWidth="250.0" styleClass="button-raised" text="No" />
+    <Label fx:id="question" alignment="TOP_CENTER" layoutX="0.0" layoutY="17.0" prefHeight="35.0" prefWidth="500.0" text="?">
+      <font>
+         <Font size="24.0" />
+      </font></Label>
+    <JFXButton fx:id="new" layoutX="0.0" layoutY="200.0" mnemonicParsing="false" onAction="#clear" prefHeight="125.0" prefWidth="250.0" text="Заново" />
+    <JFXButton fx:id="input" layoutX="250.0" layoutY="200.0" mnemonicParsing="false" onAction="#nextPane" prefHeight="125.0" prefWidth="250.0" text="Режим обучения" />
 </AnchorPane>

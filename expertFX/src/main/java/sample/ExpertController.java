@@ -23,8 +23,10 @@ public class ExpertController {
 
     public void calculate(ActionEvent actionEvent) throws FileNotFoundException {
         Button button = (Button) actionEvent.getSource();
-        String result = data.calculate(button.getText());
-        question.setText(result);
+        if(data.getCharacteristics().size() > 1 && data.getSubjects().size() > 1) {
+            String result = data.calculate(button.getText());
+            question.setText(result);
+        }
     }
 
     public void clear(ActionEvent actionEvent) throws FileNotFoundException {

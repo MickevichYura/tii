@@ -31,8 +31,43 @@ public class InputController {
     }
 
 
-    @FXML
-    void nextPane(ActionEvent event) {
+    void nextPane() {
+        ViewNavigator.loadView(ViewNavigator.EXPERT);
+    }
+
+    public void addCharacteristic(ActionEvent actionEvent) {
+        String text = characteristicsTextField.getText();
+        if (!text.equals("") && !characteristics.contains(text)) {
+            characteristics.add(text);
+        }
+        characteristicsTextField.clear();
+        updateList();
+    }
+
+    public void addSubject(ActionEvent actionEvent) {
+        String text = subjectsTextField.getText();
+        if (!text.equals("") && !subjects.contains(text)) {
+            subjects.add(text);
+        }
+        subjectsTextField.clear();
+        updateList();
+    }
+
+    public void updateList() {
+        JFXCheckBox jfxToggleButton;
+        list.getItems().clear();
+        if (characteristics.size() > 0 && subjects.size() > 0) {
+            for (String subject : subjects)
+                for (String s : characteristics) {
+                    jfxToggleButton = new JFXCheckBox();
+                    jfxToggleButton.prefWidth(500);
+                    jfxToggleButton.setText(subject + " имеет " + s + "?");
+                    list.getItems().add(jfxToggleButton);
+                }
+        }
+    }
+
+    public void saveData(ActionEvent actionEvent) {
         int size = list.getItems().size();
         int subjectsSize = subjects.size();
 
@@ -63,38 +98,10 @@ public class InputController {
             e.printStackTrace();
         }
         matrix.clear();
-        ViewNavigator.loadView(ViewNavigator.EXPERT);
+        nextPane();
     }
 
-    public void addCharacteristic(ActionEvent actionEvent) {
-        String text = characteristicsTextField.getText();
-        if (!text.equals("") && !characteristics.contains(text)) {
-            characteristics.add(text);
-        }
-        characteristicsTextField.clear();
-        updateList();
+    public void cancel(ActionEvent actionEvent) {
+        nextPane();
     }
-
-    public void addSubject(ActionEvent actionEvent) {
-        String text = subjectsTextField.getText();
-        if (!text.equals("") && !subjects.contains(text)) {
-            subjects.add(text);
-        }
-        subjectsTextField.clear();
-        updateList();
-    }
-
-    public void updateList() {
-        JFXCheckBox jfxToggleButton;
-        list.getItems().clear();
-        if (characteristics.size() > 0 && subjects.size() > 0) {
-            for (String subject : subjects)
-                for (String s : characteristics) {
-                    jfxToggleButton = new JFXCheckBox();
-                    jfxToggleButton.setText(subject + " имеет " + s + "?");
-                    list.getItems().add(jfxToggleButton);
-                }
-        }
-    }
-
 }

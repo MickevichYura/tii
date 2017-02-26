@@ -211,7 +211,7 @@ public class Main extends Applet implements Runnable {
             } else if ((step == 4) && (!abort)) this.step2();
             repaint();
             try {
-                Thread.sleep(10);
+                Thread.sleep(100);
             } catch (InterruptedException ignored) {
             }
         }
