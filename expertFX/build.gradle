@@ -27,12 +27,12 @@ jfx {
     // minimal requirement for jfxNative-task
     vendor = 'sample'
 }
-//
-//sourceSets {
-//    main {
-//        resources {
-//            srcDirs = ["src/main/java"]
-//            includes = ["**/*.fxml"]
-//        }
-//    }
-//}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ["src/main/java"]
+            includes = ["**/*.fxml", "**/*.txt"]
+        }
+    }
+}

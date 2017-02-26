@@ -1,7 +1,5 @@
 package sample;
 
-import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXToggleButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,12 +7,10 @@ import javafx.scene.control.Label;
 
 import java.io.FileNotFoundException;
 
-public class Controller {
+public class ExpertController {
     public Label question;
-    public Label answer;
     public Button yes;
     public Button no;
-    public JFXListView<JFXToggleButton> list;
 
     private Data data;
 
@@ -22,12 +18,6 @@ public class Controller {
     public void initialize() throws FileNotFoundException {
         data = Expert.init();
         question.setText(data.getCharacteristics().get(data.getMinIndex()) + "?");
-        JFXToggleButton jfxToggleButton;
-        for (int i = 0; i < 10; i++){
-            jfxToggleButton = new JFXToggleButton();
-            jfxToggleButton.setText("qw " + i);
-            list.getItems().add(jfxToggleButton);
-        }
     }
 
     public void calculate(ActionEvent actionEvent) throws FileNotFoundException {
@@ -44,4 +34,8 @@ public class Controller {
         initialize();
     }
 
+    @FXML
+    void nextPane(ActionEvent event) {
+        ViewNavigator.loadView(ViewNavigator.INPUT);
+    }
 }

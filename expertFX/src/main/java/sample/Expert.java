@@ -11,7 +11,7 @@ public class Expert {
 
     public static Data init() throws FileNotFoundException {
 
-        String basePath = "expertFx/";
+        String basePath = "expertFX/src/main/resources/sample/";
         String inputFileName = basePath + "input.txt";
         String subjectsFileName = basePath + "subjects.txt";
         String characteristicsFileName = basePath + "characteristics.txt";
