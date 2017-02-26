@@ -1,5 +1,6 @@
 package sample;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,15 +10,15 @@ import java.io.FileNotFoundException;
 
 public class ExpertController {
     public Label question;
-    public Button yes;
-    public Button no;
+    public JFXButton yes;
+    public JFXButton no;
 
     private Data data;
 
     @FXML
     public void initialize() throws FileNotFoundException {
         data = Expert.init();
-        question.setText(data.getCharacteristics().get(data.getMinIndex()) + "?");
+        question.setText("Есть " + data.getCharacteristics().get(data.getMinIndex()) + "?");
     }
 
     public void calculate(ActionEvent actionEvent) throws FileNotFoundException {
@@ -27,10 +28,6 @@ public class ExpertController {
     }
 
     public void clear(ActionEvent actionEvent) throws FileNotFoundException {
-        initialize();
-    }
-
-    public void input(ActionEvent actionEvent) throws FileNotFoundException {
         initialize();
     }
 

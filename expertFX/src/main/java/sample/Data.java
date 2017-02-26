@@ -9,6 +9,7 @@ public class Data {
     private int M;
     private List<List<Integer>> matrix;
     private List<String> characteristics;
+    private List<String> subjects;
 
     public int getN() {
         return N;
@@ -30,14 +31,12 @@ public class Data {
         return subjects;
     }
 
-    private List<String> subjects;
-
     public Data() {
     }
 
-    Data(int n, int m, List<List<Integer>> matrix, List<String> characteristics, List<String> subjects) {
-        N = n;
-        M = m;
+    public Data(List<List<Integer>> matrix, List<String> characteristics, List<String> subjects) {
+        N = characteristics.size();
+        M = subjects.size();
         this.matrix = matrix;
         this.characteristics = characteristics;
         this.subjects = subjects;
@@ -133,9 +132,9 @@ public class Data {
         removeRowsWithAllZero();
         String result;
         if (M == 1) {
-            result = "the result is " + subjects.get(0);
+            result = "Результат - " + subjects.get(0);
         } else {
-            result = characteristics.get(getMinIndex()) + "?";
+            result = "Есть " + characteristics.get(getMinIndex()) + "?";
         }
 
         return result;
