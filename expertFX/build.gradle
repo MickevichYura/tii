@@ -1,0 +1,38 @@
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+
+    }
+}
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+dependencies {
+    compile 'com.jfoenix:jfoenix:1.0.0'
+}
+apply plugin: 'javafx-gradle-plugin'
+
+
+jfx {
+    // minimal requirement for jfxJar-task
+    mainClass = 'sample.Main'
+
+    // minimal requirement for jfxNative-task
+    vendor = 'sample'
+}
+//
+//sourceSets {
+//    main {
+//        resources {
+//            srcDirs = ["src/main/java"]
+//            includes = ["**/*.fxml"]
+//        }
+//    }
+//}

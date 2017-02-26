@@ -1,0 +1,5 @@
+rootProject.name = 'tii'
+
+include 'clusterisation'
+//include 'sample'
+include 'expertFx'
