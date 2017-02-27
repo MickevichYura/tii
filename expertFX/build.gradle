@@ -5,15 +5,9 @@ buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
-
     }
 }
-apply plugin: 'java'
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
 dependencies {
     compile 'com.jfoenix:jfoenix:1.0.0'
 }
@@ -32,7 +26,7 @@ sourceSets {
     main {
         resources {
             srcDirs = ["src/main/java"]
-            includes = ["**/*.fxml", "**/*.txt"]
+            includes = ["**/*.fxml"]
         }
     }
 }

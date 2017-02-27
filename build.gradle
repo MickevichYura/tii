@@ -7,11 +7,12 @@ subprojects {
 
     repositories {
         jcenter()
+        mavenLocal()
+        mavenCentral()
     }
 
     dependencies {
         compile 'junit:junit-dep:4.11'
-        compile 'com.jfoenix:jfoenix:1.0.0'
     }
 
     version = '0.0.1'
