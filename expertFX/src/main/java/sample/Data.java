@@ -115,7 +115,7 @@ public class Data {
         int minIndex = getMinIndex();
         List<Integer> indexesWithZero = getIndexesWithZero(minIndex);
         List<Integer> indexesWithOne = getIndexesWithOne(minIndex);
-        if (userAnswer.equals("Yes")) {
+        if (userAnswer.equals("Yes") || userAnswer.equals("Да")) {
             Collections.reverse(indexesWithZero);
             for (Integer integer : indexesWithZero) {
                 matrix = removeColumn(integer);

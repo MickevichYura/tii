@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InputController {
+    @FXML
     public JFXListView<JFXCheckBox> list;
     public TextField characteristicsTextField;
     public TextField subjectsTextField;
@@ -35,7 +38,7 @@ public class InputController {
         ViewNavigator.loadView(ViewNavigator.EXPERT);
     }
 
-    public void addCharacteristic(ActionEvent actionEvent) {
+    public void addCharacteristic(ActionEvent event) {
         String text = characteristicsTextField.getText();
         if (!text.equals("") && !characteristics.contains(text)) {
             characteristics.add(text);
@@ -44,7 +47,7 @@ public class InputController {
         updateList();
     }
 
-    public void addSubject(ActionEvent actionEvent) {
+    public void addSubject(ActionEvent event) {
         String text = subjectsTextField.getText();
         if (!text.equals("") && !subjects.contains(text)) {
             subjects.add(text);
@@ -104,4 +107,17 @@ public class InputController {
     public void cancel(ActionEvent actionEvent) {
         nextPane();
     }
+
+    public void clickButtonAddCharacteristic(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            characteristicsAddButton.fire();
+        }
+    }
+
+    public void clickButtonAddSubject(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            subjectsAddButton.fire();
+        }
+    }
+
 }
